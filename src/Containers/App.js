@@ -3,6 +3,7 @@ import CardList from '../Components/CardList';
 import SearchBox from '../Components/SearchBox';
 import './App.css'
 import Scroll from '../Components/Scroll';
+import ErrorBoundry from './ErrorBoundry';
 // Parent components feed state into child, child receives the property and child can never that property
 // const state = ;
 
@@ -40,7 +41,9 @@ class App extends Component{
             <h1 className='f2'>RoboFriends</h1>
             <SearchBox searchChange = {this.onSearchChange} />
         <Scroll>
+            <ErrorBoundry>
             <CardList robots={filteredRobots} />
+            </ErrorBoundry>
         </Scroll>
             </div>
         )
